@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .logo img {
-	height: 44px;
+	height: 40px;
 	
 }
 .menu{
@@ -366,21 +366,11 @@ a.down-btn span.fa.fa-angle-down {
 	text-align: center;
 }
 
-#overview-video .overlay, #cta .overlay, #event-bg .overlay{
+#overview-video .overlay, #cta .overlay{
 	background: rgba(34, 34, 34, 0.85);
 	height: auto;
 	min-height: 200px;
 	padding: 12% 0 ;
-}
-
-#event-bg {
-	color: #ffffff;
-	background: url(../img/DSC02207.JPG);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	text-align: center;
 }
 
 .prestasi{
