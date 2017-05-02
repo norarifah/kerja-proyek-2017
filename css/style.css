@@ -366,11 +366,31 @@ a.down-btn span.fa.fa-angle-down {
 	text-align: center;
 }
 
-#overview-video .overlay, #cta .overlay{
+#overview-video .overlay, #cta .overlay, #event-bg .overlay, #profil-bg .overlay{
 	background: rgba(34, 34, 34, 0.85);
 	height: auto;
 	min-height: 200px;
 	padding: 12% 0 ;
+}
+
+#event-bg{
+	color: #ffffff;
+	background: url(../img/DSC02203.JPG);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	text-align: center;
+}
+
+#profil-bg{
+	color: #ffffff;
+	background: url(../img/bann-tkj.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	text-align: center;
 }
 
 .prestasi{
