@@ -9,6 +9,7 @@ body, html{
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
+
 @media (min-width: 1200px){
 	.container {
 		width: 960px;
@@ -127,6 +128,11 @@ h1, h2, h3, h4, h5, h6, p {
 .logo{
 	float:left;
 	margin-right: 2%;
+}
+
+.logo img {
+	height: 40px;
+	
 }
 .menu{
 	 float:left;
