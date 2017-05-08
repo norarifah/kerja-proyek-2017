@@ -47,6 +47,27 @@
 
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
 
+	<?php
+	$user_name = "root";
+	$password = "";
+	$database = "nyoba";
+	$host_name = "localhost"; 
+	 
+	mysql_connect($host_name, $user_name, $password);
+	$find_db=mysql_select_db($database);
+ 
+	if ($find_db) {
+	 
+	 echo "Database  Ada";
+	 
+	}else {
+	 
+	 echo "Database Tidak Ada";
+	 
+	}
+	 
+	?>
+
   </head>
   <body>
     <!-- Header Section -->
@@ -125,7 +146,7 @@
                         <h2>PROFIL</h2>
                         <hr>
                     </div>
-                    <p>Teknik Komputer dan Jaringan atau yang lebih dikenal dengan sebutan TKJ adalah salah satu bidang kejuruan yang ada di SMK Negeri 2 Depok Sleman. TKJ merupakan salah satu kejuruan yang menjadi daya tarik banyak siswa untuk belajar ke SMK Negeri 2 Depok Sleman. Di jurusan ini tidak hanya tentang perangkat keras komputer saja yang dipelajari, akan tetapi lebih luas dari itu. Perangkat lunak dan jaringan baik lokal ataupun internet turut pula dipelajari</p>
+                    <p>iki kan ra kanggo soale</p>
                     <div>
                     	<a href="profil.html" class="btn read-more-btn">More Information</a>
                     </div>
@@ -158,8 +179,10 @@
                         <h2>Prestasi</h2>
                         <hr>
                     </div>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
                 </div>
             </div>
+            <div class="space"></div>
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <figure class="bar sd round">
@@ -189,7 +212,7 @@
               			<figcaption class="round">
               				<h5>Prestasi</h5>
               				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti ... 
-            				<a href="#" class="btn go-to-btn edit-record" data-toggle="modal" data-target="#myModal" data-id="Arifah">Detail</a>
+            				<a href="#" class="btn go-to-btn edit-record" data-toggle="modal" data-target="#myModal" data-id="Nor Arifah">Detail</a>
               			</figcaption>  
           			</figure>
                 </div>
@@ -216,7 +239,7 @@
     </div>
 
     <!-- Portfolio Section -->
-    <div class="segitiga-a"></div>
+<!--    <div class="segitiga-a"></div>
     <div id="event">
         <div class="container">
             <div class="row text-center">
@@ -291,7 +314,7 @@
                 </div>
             </div>
         </div>-->
-        <div class="space"></div>
+    <!--    <div class="space"></div>
         <div class="text-center">
             <div class="bar">
             	<a href="event.html" class="btn read-more-btn">More Information</a>
@@ -303,7 +326,7 @@
     <div class="segitiga-b"></div>
 
     <!-- Clients Section -->
-    <div id="clients">
+<!--    <div id="clients">
         <div class="overlay">
             <div class="container text-center">
                 <div class="section-title">
