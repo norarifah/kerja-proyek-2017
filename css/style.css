@@ -392,16 +392,6 @@ a.down-btn span.fa.fa-angle-down {
 	background-attachment: scroll;
 	text-align: center;
 }
-#profil-bg .overlay img {
-	width: 200px;
-	margin: 0;
-}
-
-#prof .container .row img {
-	float: left;
-	width: 200px;
-	margin-top: 30px;
-}
 
 .prestasi{
 	height: 300px;
