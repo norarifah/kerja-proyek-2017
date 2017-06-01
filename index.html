@@ -325,26 +325,80 @@
                 </div>
 
                 <div class="col-md-9">
-                    <form autocomplete="off">
+<?php if(!empty($statusMsg)){ ?>
+  <p class="statusMsg <?php echo !empty($msgClass)?$msgClass:''; ?>"><?php echo $statusMsg; ?></p>
+<?php } ?>
+                    <form autocomplete="off" action="" method="post">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
-                                <input type="text" class="form-control" placeholder="Phone No.">
+                                <input type="text" class="form-control" placeholder="Your Name" name="name" required="">
+                                <input type="text" class="form-control" placeholder="Phone No." name="phone" required="">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Email">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <input type="text" class="form-control" placeholder="email@example.com" name="email" required="">
+                                <input type="text" class="form-control" placeholder="Subject" name="subject" required="">
                             </div>
                         </div>
-                        <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                        <textarea class="form-control" rows="4" placeholder="Message" name="message" required=""></textarea>
                         <div class="text-right">
-                            <a href="#" class="btn send-btn">Send</a>
+                        <input type="submit" name="send" value="Send"/>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    
+<script>
+$statusMsg = '';
+$msgClass = '';
+if(isset($_POST[send])){
+    // Get the submitted form data
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    
+    // Cek apakah ada data yang belum diisi
+    if(!empty($name) && !empty($phone) && !empty($email) && !empty($subject)&& !empty($message){
+        
+        if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+            $statusMsg = 'Please enter your valid email.';
+            $msgClassk = 'errordiv';
+        }else{
+            // Pengaturan penerima email dan subjek email
+            $toEmail = 'example@example.com'; // Ganti dengan alamat email yang Anda inginkan
+            $emailSubject = 'Pesan website dari '.$name;
+            $htmlContent = '<h2> via Form Kontak Website</h2>
+                <h4>Name</h4><p>'.$name.'</p>
+                <h4>Phone</h4><p>'.$phone.'</p>
+                <h4>Email</h4><p>'.$email.'</p>
+                <h4>Subject</h4><p>'.$subject.'</p>
+                <h4>Message</h4><p>'.$message.'</p>';
+            
+            // Mengatur Content-Type header untuk mengirim email dalam bentuk HTML
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            
+            // Header tambahan
+            $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n";
+            
+            // Send email
+            if(mail($toEmail,$emailSubject,$htmlContent,$headers)){
+                $statusMsg = 'Pesan Anda sudah terkirim dengan sukses !';
+                $msgClass = 'succdiv';
+            }else{
+                $statusMsg = 'Maaf pesan Anda gagal terkirim, silahkan ulangi lagi.';
+                $msgClass = 'errordiv';
+            }
+        }
+    }else{
+        $statusMsg = 'Harap mengisi semua field data';
+        $msgClass = 'errordiv';
+    }
+}	
+</script>    
     
     <nav id="footer">
         <div class="container">
@@ -404,7 +458,7 @@
     <script>
       $(function(){
           $("#head-title").typed({
-            strings: ["Teknik Komputer Jaringan", "SMK N 2 DEPOK SLEMAN" ],
+            strings: ["Teknik Komputer Jaringan", "SMK N 2 DEPOK SLEMAN"],
             typeSpeed: 90,
             loop: true,
             startDelay: 90
