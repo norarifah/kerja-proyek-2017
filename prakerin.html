@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TKJ Stembayo | Profil</title>
+    <title>TKJ Stembayo | PRAKERIN</title>
     <meta name="description" content="Your Description Here">
     <meta name="keywords" content="free boostrap, bootstrap template, freebies, free theme, free website, free portfolio theme, portfolio, personal, cv">
     <meta name="author" content="Jenn, ThemeForces.com">
@@ -60,7 +60,7 @@
 					  		<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav navbar-nav" id="nav">
 						    	<li><a class="page-scroll" href="index.html">Home</a></li>
-						    	<li><a class="page-scroll" href="#">Profil</a></li>
+						    	<li><a class="page-scroll" href="profil.html">Profil</a></li>
 						    	<li><a class="page-scroll" href="prestasi.html">Prestasi</a></li>
 						    	<li><a class="page-scroll" href="event.html">Event</a></li>			
 								<div class="clear"></div>
@@ -94,7 +94,7 @@
 	</div>
 
     <!-- Overview Video Section -->
-    <div id="profil-bg">
+    <div id="overview-video">
         <div class="overlay">
             <div class="container">
             </div>
@@ -103,132 +103,69 @@
 
     <!-- prestasi Section -->
     <div class="segitiga-a"></div>
-    <div id="prof">    	
-        <div class="container text-center">
-            <div class="row">
-            	<div id="prof1" class="col-md-12">
-               		<h2>PROFIL</h2>
-               	</div>
-                <div class="col-md-8 col-md-offset-2">
-                    <h2>Visi</h2>
-                    <div class="row">
-                    	<div>
-                    		<p>Menghasilkan administrator jaringan komputer junior yang kompeten. (Junior Network Administrator)</p>
-                    	</div>
-                    </div>
-                    
-                    <h2>Misi</h2>
-                    <div class="row">
-                    	<div>
-                    		<p>1. Melaksanakan pendidikan dan pelatihan dalam bidang teknologi komputer dan jaringan</p>
-                    		<p>2. Melatih keterampilan wirausaha di bidang teknologi komputer dan komunikasi</p>
-                    	</div>
-                    </div>
-                    <a href="#cta" class="down-btn page-scroll">
-                        <span class="fa fa-angle-down"></span>
-                    </a>
-                </div>
-            </div> 
-        </div>
-    </div>
-    <div class="segitiga-b"></div>
+    <div id="pres">
+        <div class="container text-center"> 
+            	<script>
+            	<?php
+//membuat koneksi ke database
+$host = 'localhost';
+$user = 'root';      
+$password = '';      
+$database = 'pkl_db';  
+    
+  $konek_db = mysql_connect($host, $user, $password);    
+  $find_db = mysql_select_db($database) ;
+?>
 
-    <!-- Call-to-Action Section -->
-    <div id="cta">
-    	<div class="overlay">
-	        <div class="container text-center">
-	            <div class="row text-center">
-	                <div class="col-md-8 col-md-offset-2">
-	                    <div class="section-title">
-	                        <h2>Fasilitas</h2>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row text-center">
-	                <div class="col-md-4 col-sm-4">
-	                    <figure class="bar sd round">
-	              			<img class="strech round" src="img/wan.jpg" alt=""> 
-	              			<figcaption class="round">
-	              				<h4>Lab LAN</h4>
-	              			</figcaption>  
-	          			</figure>
-	                </div>
+<center> 
+MENAMPILKAN DATA PERUSAHAAN TEMPAT PRAKERIN  
+<br>
+<br>
 
-	                <div class="col-md-4 col-sm-4">
-	                    <figure class="bar sd round">
-	              			<img class="strech round" src="img/wan.jpg" alt=""> 
-	              			<figcaption class="round">
-	              				<h4>Lab WAN</h4>
-	              			</figcaption>  
-	          			</figure>
-	                </div>
+<!-- ///////////////////////////// Script untuk membuat tabel///////////////////////////////// -->
 
-	                <div class="col-md-4 col-sm-4">
-	                    <figure class="bar sd round">
-	              			<img class="strech round" src="img/wan.jpg" alt=""> 
-	              			<figcaption class="round">
-	              				<h4>Lab PPK</h4>
-	              			</figcaption>  
-	          			</figure>
-	                </div>        
-	            </div>
-	            <a href="#struktur" class="down-btn page-scroll">
-	                <span class="fa fa-angle-down"></span>
-	            </a>
-	            <div class="space"></div>
-	        </div>
-        </div>
-    </div>
+<table  border='1' Width='800'>  
+<tr>
+    <th> No </th>
+    <th> Nama Perusahaan</th>
+    <th> Alamat </th>
+    
+</tr>
 
-    <!-- Portfolio Section -->
-    <div class="segitiga-a"></div>
-    <div id="struktur">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="section-title">
-                        <h2>Struktur Organisasi</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="space"></div>
-        <div style="width: 165%; margin-left: -445px;">
-        	<img src="img/struktur.png" class="img-responsive" alt="...">
-        </div>
-        <div class="space"></div>
-    </div>
-    <div class="segitiga-b"></div>
+<?php  
+// Perintah untuk menampilkan data
+$queri="Select * From pkl" ;  //menampikan SEMUA data dari tabel pkl
 
-    <!-- Clients Section -->
-    <div id="clients">
-        <div class="overlay">
-            <div class="container text-center">
-                <div class="section-title">
-                    <h2>Our Partners</h2>
-                    <hr>
-                </div>
+$hasil=MySQL_query ($queri);    //fungsi untuk SQL
 
-                <ul class="clients">
-                    <li><a href="#"><img src="img/clients/01.png" class="img-responsive" alt="..."></a></li>
-                    <li><a href="#"><img src="img/clients/02.png" class="img-responsive" alt="..."></a></li>
-                    <li><a href="#"><img src="img/clients/03.png" class="img-responsive" alt="..."></a></li>
-                    <li><a href="#"><img src="img/clients/04.png" class="img-responsive" alt="..."></a></li>
-                </ul>
-              <div class="bar">
-            <a href="prakerin.html" class="btn read-more-btn">More Information</a>
-            </div>  
-            </div>
+// perintah untuk membaca dan mengambil data dalam bentuk array
+while ($data = mysql_fetch_array ($hasil)){
+$id = $data['id'];
+ echo "    
+        <tr>
+        <td>".$data['nama']."</td>
+        <td>".$data['alamat']."</td>
+        
+        </tr> 
+        ";
+        
+}
+
+?>
+
+</table>
+</script>
+
         </div>
     </div>
 
     <nav id="footer">
         <div class="container">
              <div class="pull-left">
-                <p>2017 © ECodingCorp. All Rights Reserved.</p>
+                <p>2017 &copy; ECodingCorp. All Rights Reserved.</p>
             </div>
             <div class="pull-right"> 
-                <a href="#prof" class="page-scroll">Back to Top <span class="fa fa-angle-up"></span></a>
+                <a href="#pres" class="page-scroll">Back to Top <span class="fa fa-angle-up"></span></a>
             </div>
         </div>
     </nav>
@@ -243,8 +180,7 @@
     <script type="text/javascript" src="js/jasny-bootstrap.min.js"></script>
 
     <script src="js/owl.carousel.js"></script>
-    <script src="js/typed.js"></script>
-    
+
     <!-- Javascripts
     ================================================== -->
     <script type="text/javascript" src="js/main.js"></script>
