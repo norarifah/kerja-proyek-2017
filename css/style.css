@@ -536,11 +536,11 @@ input[type=submit]{
 }
 input[type=submit]:hover{
 	background: transparent;
-	border: 1px solid #0b486b;
+	border: 2px solid #0b486b;
 	color: #ffffff;
 }
 input[type=submit]:active {
-    background: #0044CC;
+    background: #0b486b;
 }
 
 a.btn.send-btn{
