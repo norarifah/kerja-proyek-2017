@@ -11,13 +11,6 @@
     <meta name="keywords" content="free boostrap, bootstrap template, freebies, free theme, free website, free portfolio theme, portfolio, personal, cv">
     <meta name="author" content="Jenn, ThemeForces.com">
     
-    <!-- Favicons
-    ================================================== -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.css">
@@ -34,10 +27,11 @@
     <link rel="stylesheet" type="text/css"  href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-
+	<link rel="stylesheet" type="text/php"href="pkl_tb.php"/>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+	<script type="text/javascript" src="js/modernizr.custom.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -105,58 +99,82 @@
     <div class="segitiga-a"></div>
     <div id="pres">
         <div class="container text-center"> 
-            	<script>
-            	<?php
-//membuat koneksi ke database
-$host = 'localhost';
-$user = 'root';      
-$password = '';      
-$database = 'pkl_db';  
-    
-  $konek_db = mysql_connect($host, $user, $password);    
-  $find_db = mysql_select_db($database) ;
-?>
-
-<center> 
-MENAMPILKAN DATA PERUSAHAAN TEMPAT PRAKERIN  
-<br>
-<br>
-
-<!-- ///////////////////////////// Script untuk membuat tabel///////////////////////////////// -->
-
-<table  border='1' Width='800'>  
-<tr>
-    <th> No </th>
-    <th> Nama Perusahaan</th>
-    <th> Alamat </th>
-    
-</tr>
-
-<?php  
-// Perintah untuk menampilkan data
-$queri="Select * From pkl" ;  //menampikan SEMUA data dari tabel pkl
-
-$hasil=MySQL_query ($queri);    //fungsi untuk SQL
-
-// perintah untuk membaca dan mengambil data dalam bentuk array
-while ($data = mysql_fetch_array ($hasil)){
-$id = $data['id'];
- echo "    
-        <tr>
-        <td>".$data['nama']."</td>
-        <td>".$data['alamat']."</td>
-        
-        </tr> 
-        ";
-        
+            	
+<script>            	
+<?php
+//buat koneksi dengan MySQL
+$link=mysql_connect('localhost','root','');
+  
+//jika koneksi gagal, langsung keluar dari PHP
+if (!$link)
+{
+   die("Koneksi dengan MySQL gagal");
+}
+  
+//gunakan database pkl
+$result=mysql_query('USE pkl_db');
+if (!$result)
+{
+   die("Database gagal digunakan");
 }
 
-?>
 
-</table>
 </script>
 
-        </div>
+   <style>
+   h3{
+      text-align:center; }
+   table { 
+      border-collapse:collapse;
+      border-spacing:0;     
+      font-family:Arial, sans-serif;
+      font-size:16px;
+      padding-left:100px;
+      margin:auto; }
+      
+   table th {
+      font-weight:bold;
+      padding-right:80px;
+      padding-left: 80px;
+      color:#fff;
+      background-color:#2A72BA;
+      border-top:1px black solid;
+      border-bottom:1px black solid;}
+
+   table td {
+      padding:10px;
+      border-top:1px black solid;
+      border-bottom:1px black solid;
+      text-align:center; }         
+   tr:nth-child(even) {
+     background-color: #DFEBF8; }
+   </style>
+
+   <h2>DAFTAR PERUSAHAAN UNTUK TEMPAT PRAKERIN</h2>
+<table>
+<tr>
+   <th>No</th>
+   <th>Nama Perusahaan</th>
+   <th>Alamat</th>
+   <th>Website</th>
+   
+
+<script>//tampilkan tabel pkl
+<?php
+$result=mysql_query('SELECT * FROM pkl_tb');
+while ($row=mysql_fetch_array($result))
+{
+   echo "<tr>";
+    <td>".$row['id']."</td>;
+    <td>".$row['nama']."</td>;
+    <td>".$row['alamat']."</td>;
+    <td>".$row['website']."</td>;
+    "</tr>";
+}
+?></script>
+</tr>
+</table>     	
+   </div>
     </div>
 
     <nav id="footer">
