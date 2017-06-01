@@ -400,7 +400,7 @@ a.down-btn span.fa.fa-angle-down {
 	margin-bottom: 0px;
 	transition: all 0.3s;
 	position: relative;
-	padding: 60px 25px;
+	padding: 40px 25px;
 }
 .prestasi:hover>h4,
 .prestasi:hover>span.fa{
