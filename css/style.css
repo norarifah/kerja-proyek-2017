@@ -136,10 +136,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .menu{
 	 float:left;
-	 margin: 5px 0 0;
+	 margin:0;
 }
 .menu li{
-	display:inline-block;
+ display: inline-block;
  }
 .menu li:first-child{
    	margin-left:0;
@@ -148,18 +148,58 @@ h1, h2, h3, h4, h5, h6, p {
   	 display: block;
 	font-size: 1em;
 	text-transform: uppercase;
-	padding: 5px 20px;
-	color: #FFF;
+	padding: 5px 10px;
+	color: #ffffff;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 	font-weight: 600;
  }
- .menu li a:hover ,.menu li.active a{
-	 background:#fff;
-	 color:#5c5c5c;
- } 
+ 
+ .sub-menu  li  a:hover, .sub-menu  li  a:focus{
+  background-color: #ffffff;
+  color: #3b8686;
+  text-decoration: none;
+}
+ 
+ 
+ .nav.navbar-nav > li:hover > ul.sub-menu{
+   display:block;
+  -webkit-animation: fadeInUp 400ms;
+  -moz-animation: fadeInUp 400ms;
+  -ms-animation: fadeInUp 400ms;
+  -o-animation: fadeInUp 400ms;
+  animation: fadeInUp 400ms;
+}
+
+ul.sub-menu {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background: rgba(59, 134, 134, 1);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 190px;
+	-webkit-box-shadow: 0 3px 3px rgba(59, 134, 134, 0.6);
+	box-shadow: 0 3px 3px rgba(59, 134, 134, 0.6);
+	display: none;
+	z-index: 999;
+}
+
+.navbar-nav li ul.sub-menu li{
+  padding: 5px ;
+}
+
+.navbar-nav li ul.sub-menu li:last-child{
+  padding: 5px;
+}
+
+.navbar-nav li ul.sub-menu li a:hover{
+	color: #3b8686;
+}
+  
  #nav .current a {
 	 color:red;
 }
