@@ -106,9 +106,10 @@
       
    table th {
       font-weight:bold;
-      padding-right:50px;
-      padding-left: 50px;
+      padding:auto;
       color:#fff;
+      text-align:center;
+      margin: auto;
       background-color:#2A72BA;
       border-top:1px black solid;
       border-bottom:1px black solid;}
@@ -125,40 +126,67 @@
 <?php
 
 
-echo "<table Width='800' margin-top='50' align='center'>  
+echo "<table width='100%' margin-top='50' align='center'>  
 <tr>
 	<tr><h4 color='#fff'>jfhdhdg</h4></tr>
 	<tr><h4 color='#fff'>jfhdhdg</h4></tr>
-	<th><h2 align=center> DAFTAR PERUSAHAAN TEMPAT PRAKERIN </h2></th>
+	<th><h2 align=center> TENAGA PENDIDIK TEKNIK KOMPUTER DAN JARINGAN </h2></th>
     <tr>  </tr>
        
 </tr>";
 
-include 'koneksi.php';
+include 'konekguru.php';
 
 echo "<table  border='1' Width='800' align='center'>  
 <tr>
 	<th> No </th>
-	<th> Nama Perusahaan </th>
+	<th> Nama</th>
+    <th> NIP </th>
+    <th> Jenis Kelamin </th>
+    <th> Agama </th>
+    <th> Tempat Lahir </th>
+    <th> Tanggal Lahir </th>
     <th> Alamat </th>
-    <th> Website </th>
+    <th> Status </th>
+    <th> Golongan </th>
+    <th> Mapel Tugas Pokok </th>
+    <th> Keterangan </th>
+    <th> Tugas Tambahan </th>
        
 </tr>";
-$query = "SELECT * FROM pkl_tb";
+$query = "SELECT * FROM table_guru";
 $result = mysqli_query($connect,$query) or die ("error");
 
 while ($data = mysqli_fetch_array($result)){
 
 $id=$data['id'];
 $nama=$data['nama'];
+$nip=$data['nip'];
+$jenis_kelamin=$data['jenis_kelamin'];
+$agama=$data['agama'];
+$tempat_lahir=$data['tempat_lahir'];
+$tanggal_lahir=$data['tanggal_lahir'];
 $alamat=$data['alamat'];
-$website=$data['website'];
+$status=$data['status'];
+$golongan=$data['golongan'];
+$mapel_tugas_pokok=$data['mapel_tugas_pokok'];
+$keterangan=$data['keterangan'];
+$tugas_tambahan=$data['tugas_tambahan'];
 
 echo "<tr>
 	<td>$id</td>
 	<td>$nama</td>
+	<td>$nip</td>
+	<td>$jenis_kelamin</td>
+	<td>$agama</td>
+	<td>$tempat_lahir</td>
+	<td>$tanggal_lahir</td>
 	<td>$alamat</td>
-	<td>$website</td>
+	<td>$status</td>
+	<td>$golongan</td>
+	<td>$mapel_tugas_pokok</td>
+	<td>$keterangan</td>
+	<td>$tugas_tambahan</td>
 </tr>
 ";
 };
