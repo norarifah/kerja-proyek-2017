@@ -99,6 +99,8 @@
    table { 
       border-collapse:collapse;
       border-spacing:0;     
+      border-left: 1px black solid;
+      border-right: 1px black solid;
       font-family:Arial, sans-serif;
       font-size:16px;
       padding-left:10px;

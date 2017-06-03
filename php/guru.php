@@ -99,10 +99,13 @@
    table { 
       border-collapse:collapse;
       border-spacing:0;     
+      border-left:1px black solid;
+      border-right:1px black solid;
       font-family:Arial, sans-serif;
       font-size:16px;
       padding-left:10px;
-      margin:auto; }
+      margin:auto; 
+}
       
    table th {
       font-weight:bold;
@@ -126,7 +129,7 @@
 <?php
 
 
-echo "<table width='100%' margin-top='50' align='center'>  
+echo "<table width='87.75%' margin-top='50' align='center'>  
 <tr>
 	<tr><h4 color='#fff'>jfhdhdg</h4></tr>
 	<tr><h4 color='#fff'>jfhdhdg</h4></tr>
@@ -144,8 +147,6 @@ echo "<table  border='1' Width='800' align='center'>
     <th> NIP </th>
     <th> Jenis Kelamin </th>
     <th> Agama </th>
-    <th> Tempat Lahir </th>
-    <th> Tanggal Lahir </th>
     <th> Alamat </th>
     <th> Status </th>
     <th> Golongan </th>
@@ -164,8 +165,6 @@ $nama=$data['nama'];
 $nip=$data['nip'];
 $jenis_kelamin=$data['jenis_kelamin'];
 $agama=$data['agama'];
-$tempat_lahir=$data['tempat_lahir'];
-$tanggal_lahir=$data['tanggal_lahir'];
 $alamat=$data['alamat'];
 $status=$data['status'];
 $golongan=$data['golongan'];
@@ -179,8 +178,6 @@ echo "<tr>
 	<td>$nip</td>
 	<td>$jenis_kelamin</td>
 	<td>$agama</td>
-	<td>$tempat_lahir</td>
-	<td>$tanggal_lahir</td>
 	<td>$alamat</td>
 	<td>$status</td>
 	<td>$golongan</td>
